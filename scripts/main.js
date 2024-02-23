@@ -5,7 +5,7 @@ let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
 
 function setUserName() {
-    const myName = prompt("あなたの名前を入力してください。");
+    let myName = prompt("あなたの名前を入力してください。");
     if (!myName) {
         setUserName();
     } else {
@@ -23,4 +23,3 @@ if (!localStorage.getItem("name")) {
 myButton.onclick = () => {
     setUserName();
 };
-  
