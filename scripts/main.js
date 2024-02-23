@@ -6,7 +6,7 @@ function setUserName() {
     if (!myName) {
         setUserName();
     } else {
-        localStorage.setItem("name", myName);
+        localStorage.setItem('name', myName);
         myHeading.textContent = `${myName} さん、Mozilla はかっこいいよ。`;
     }
 }
