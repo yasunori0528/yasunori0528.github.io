@@ -5,6 +5,6 @@ window.onload = function(){
     //ctx.fillRect(20, 10, 150, 100);
     ctx.font = "50px serif";
     a = Math.random();
-    b = toString(a);
+    b = a.toString();
     ctx.fillText(b, 100, 100, 140);
 }
