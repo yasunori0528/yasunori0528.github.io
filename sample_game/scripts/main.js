@@ -181,13 +181,13 @@ function relateTileChek(row, col, flag){
 }
 class Tile {
     constructor() {
-    this.x = 0;
-    this.y = 0;
-    this.row = 0;
-    this.col = 0;
-    this.color = "#cc0000";
+        this.x = 0;
+        this.y = 0;
+        this.row = 0;
+        this.col = 0;
+        this.color = "#cc0000";
     }
     draw(){
-    rectFill(this.x, this.y, tileSize, tileSize, this.color);
+        rectFill(this.x, this.y, tileSize, tileSize, this.color);
     }
 }
