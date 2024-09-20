@@ -1,3 +1,31 @@
+// WebAssemblyモジュールをロード
+var moduleInstance = Module();
+moduleInstance.onRuntimeInitialized = function() {
+    console.log("WebAssembly module initialized.");
+
+    // モジュールが初期化された後にボタンが有効になる
+    document.querySelector('button').disabled = false;
+};
+
+function execute() {
+    var a = parseInt(document.getElementById('inputA').value);
+    var b = parseInt(document.getElementById('inputB').value);
+    var operation = document.getElementById('operation').value;
+    var result;
+
+    // 選択された演算に応じてC++関数を呼び出す
+    if (operation === 'add') {
+        result = moduleInstance._add(a, b);
+    } else if (operation === 'subtract') {
+        result = moduleInstance._subtract(a, b);
+    } else if (operation === 'multiply') {
+        result = moduleInstance._multiply(a, b);
+    } else if (operation === 'divide') {
+        result = moduleInstance._divide(a, b);
+    }
+
+    document.getElementById('result').innerText = result;
+}
 
 var Module = (() => {
   var _scriptDir = typeof document !== 'undefined' && document.currentScript ? document.currentScript.src : undefined;
