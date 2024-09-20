@@ -1,5 +1,6 @@
 // WebAssemblyモジュールをロード
 var moduleInstance = Module();
+
 moduleInstance.then(function(instance) {
     console.log("WebAssembly module initialized.");
 
